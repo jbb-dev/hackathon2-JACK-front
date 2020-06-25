@@ -18,6 +18,7 @@ const DemandPart2 = () => {
                 className="demand2_input"
                 type="text"
                 placeholder="Indiquez le motif"
+                autoFocus
               />
             </label>
           </form>
@@ -25,16 +26,16 @@ const DemandPart2 = () => {
           <h4>Nature des soins:</h4>
           <div>
             <div className="demand2_list">
-              <input type="checkbox" class="demand2" id="demand2_1" />
-              <label for="demand2_1">Maladie</label>
-              <input type="checkbox" class="demand2" id="demand2_2" />
-              <label for="demand2_2">Affection longue durée</label>
-              <input type="checkbox" class="demand2" id="demand2_3" />
-              <label for="demand2_3">Maternité</label>
-              <input type="checkbox" class="demand2" id="demand2_4" />
-              <label for="demand2_4">Accident du travail</label>
-              <input type="checkbox" class="demand2" id="demand2_5" />
-              <label for="demand2_5">Accident causé par un tiers</label>
+              <input type="radio" name="demo1" class="demand2" id="demo1-a" />
+              <label for="demo1-a">Maladie</label>
+              <input type="radio" name="demo1" class="demand2" id="demo1-b" />
+              <label for="demo1-b">Affection longue durée</label>
+              <input type="radio" name="demo1" class="demand2" id="demo1-c" />
+              <label for="demo1-c">Maternité</label>
+              <input type="radio" name="demo1" class="demand2" id="demo1-d" />
+              <label for="demo1-d">Accident du travail</label>
+              <input type="radio" name="demo1" class="demand2" id="demo1-e" />
+              <label for="demo1-e">Accident causé par un tiers</label>
             </div>
             <form>
               <div className="demand2_incident">
@@ -71,7 +72,7 @@ const DemandPart2 = () => {
             <Uploads />
           </div>
         </div>
-        <Footer stepText="Etape 2/3"/>
+        <Footer stepText="Etape 2/3" path="/DemandStep3" />
       </div>
     </>
   );

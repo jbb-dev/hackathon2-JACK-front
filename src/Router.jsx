@@ -5,7 +5,9 @@ import Login from "./components/Landing/Login";
 import Register from "./components/Landing/Register";
 import Informations from "./components/Informations";
 import AboutUs from "./components/AboutUs";
+import Demand1 from "./components/Demands/Demand-part1";
 import Demand2 from "./components/Demands/Demand-part2";
+
 
 
 
@@ -19,6 +21,7 @@ const Router = () => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/informations" component={Informations} />
         <Route exact path="/aboutUs" component={AboutUs} />
+        <Route exact path="/DemandStep1" component={Demand1} />
         <Route exact path="/DemandStep2" component={Demand2} />
       </Switch>
     </>

@@ -11,7 +11,7 @@ const Footer = (props) => {
             Sauvegarder
           </button>
         </Link>
-        <Link to="/register">
+        <Link to={props.path}>
           <button type="button" className="next-button">
             Etape suivante
           </button>
