@@ -1,18 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import "./landing.css";
 import { Link } from "react-router-dom";
 import { Form, FormGroup, Label, Input } from "reactstrap";
 import Axios from 'axios';
-
+import logo from '../../assets/images/hermes2.png'
 
 const Register = () => {
 
   // Check if subscribe successfull or not
   const [success, setSuccess] = useState(null)
   //post new user
-  const [dataUser, setDataUser] = useState( {
+  const [dataUser, setDataUser] = useState({
     user_lastname : '',
     user_firstname : '',
+    user_birthdate : '',
     user_email : '',
     user_password : '',
     user_accept_CGV : 0
@@ -30,7 +31,7 @@ const Register = () => {
 
   return (
     <div className="register_page">
-      <img className="register_logo" src="" alt="logo" />
+      <img className="register_logo" src={logo} alt="logo" />
         { 
           success === true ? 
             <div class="alert alert-success" role="alert">
@@ -67,6 +68,18 @@ const Register = () => {
               placeholder=" Prénom"
               value={dataUser.user_firstname}
               onChange={(e) => setDataUser({...dataUser, user_firstname: e.target.value})}
+            />
+          </label>
+        </form>
+        <form className="register_forms">
+          <label>
+            <input
+              required
+              className="register_input_text"
+              type="text"
+              placeholder=" Date de naissance"
+              value={dataUser.user_birthdate}
+              onChange={(e) => setDataUser({ ...dataUser, user_birthdate: e.target.value })}
             />
           </label>
         </form>
@@ -113,18 +126,19 @@ const Register = () => {
         </Form>
       </div>
 
-      {dataUser.user_lastname && dataUser.user_firstname && dataUser.user_password &&  dataUser.user_email !== '' && dataUser.user_accept_CGV === 1 ? 
+      {dataUser.user_lastname && dataUser.user_firstname && dataUser.user_password &&  dataUser.user_email !== '' && dataUser.user_accept_CGV ? 
         <button 
           type='submit' 
           className='register_button' 
-          disabled='false'
-          onClick={(e) => subscribe(e)}>
+          // disabled='false'
+          onClick={(e) => subscribe(e)}
+          >
             CREER UN COMPTE
         </button>
         : <button 
           type='submit'
-          className='register_button'
-          // disabled='true' 
+          className='register_button disabled'
+          disabled='true'
           onClick={(e) => subscribe(e)}>
             CREER UN COMPTE
         </button>
@@ -135,8 +149,9 @@ const Register = () => {
         <Link to="/login" style={{ textDecoration: "none" }}>
           <p className="register_low_text">Se connecter</p>
         </Link>
-      </div>
     </div>
-  );
+    </div>
+  )
 };
+
 export default Register;

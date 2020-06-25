@@ -1,0 +1,66 @@
+.profile_page {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 3em;
+    margin-right: 3em;
+    padding-bottom: 1em;
+  }
+  
+  .pass-button{
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
+    background-color: #DE8300;
+    color: white;
+    text-align: center;
+    width: 5em;
+    height: 2.5em;
+    border: solid 1px#DE8300;
+    border-radius: 20px;
+  }
+
+.valid{
+  border-color: green;
+}
+
+.invalid{
+  border-color: red;
+}
+
+
+table{
+    width: 100%;
+    text-align: center;
+}
+  
+table input {
+  max-width: 60vw;
+  max-height: 5vh
+}
+
+table tr {
+  height: 8vh;
+}
+
+.modif_button {
+    background-color: #DE8300;
+    border: none;
+    margin-bottom: 1em;
+    border-style: none;
+    border-radius: 20px;
+    font-family: "Open Sans", sans-serif;
+    color: white;
+    height: 3em;
+    width: 18em;
+    outline: none;
+    margin-top: 35px;
+}
+
+.entete{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.valeur{
+    font-size: 16px;
+}
