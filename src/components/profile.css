@@ -30,16 +30,18 @@
 
 table{
     width: 100%;
-    text-align: center;
+    text-align: left;
+    margin-top: 20px;
 }
   
 table input {
   max-width: 60vw;
-  max-height: 5vh
+  max-height: 5vh;
+  margin : 5px;
 }
 
 table tr {
-  height: 8vh;
+  height: 2vh;
 }
 
 .modif_button {
@@ -59,8 +61,12 @@ table tr {
 .entete{
     font-weight: bold;
     font-size: 18px;
+    border-bottom: 1px solid #00A0C8;
+    color: #00A0C8;
+    height: 5px;
 }
 
 .valeur{
     font-size: 16px;
 }
+

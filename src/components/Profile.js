@@ -55,29 +55,29 @@ const Profile = (props) => {
       <Header arrow='true' title="Profil" />
       <div className="profile_page">
         <table>
-          <tr className="entete">Nom :</tr>
+          <tr className="entete">Nom </tr>
           <tr className="valeur">{profile.nom}</tr>
-          <tr className="entete">Prénom :</tr>
+          <tr className="entete">Prénom </tr>
           <tr className="valeur">{profile.prenom}</tr>
-          <tr className="entete">Date de naissance :</tr>
+          <tr className="entete">Date de naissance </tr>
           <tr className="valeur">{profile.naissance}</tr>
-          <tr className="entete">Adresse Mail :</tr>
+          <tr className="entete">Adresse Mail </tr>
           <tr className="valeur">{modif ? <input type='text' value={modifiedProfile.mail} onChange={(e) => setModifiedProfile({ ...modifiedProfile, mail: e.target.value })} /> : profile.mail}</tr>
-          {modif ? <><tr className="entete">Nouveau mot de passe :</tr>
+          {modif ? <><tr className="entete">Nouveau mot de passe </tr>
           <tr className="valeur"><input type='password' className={validPW? 'valid' : 'invalid'} value={typedPW} onChange={(e)=> setTypedPW( e.target.value)}/></tr>
-          <tr className="entete">Valider mot de passe :</tr>
+          <tr className="entete">Valider mot de passe </tr>
           <tr><input type='password' className={validPW ? 'valid' : 'invalid'} onChange={(e) => changePW(e) } /></tr> </> : ''}
-          <tr className="entete">Adresse postale :</tr>
+          <tr className="entete">Adresse postale </tr>
           <tr className="valeur">{modif ? <input type='text' value={modifiedProfile.rue} onChange={(e) => setModifiedProfile({...modifiedProfile, rue: e.target.value})} /> : profile.rue}</tr>
           <tr className="valeur">{modif ? <input type='text' value={modifiedProfile.postal} onChange={(e) => setModifiedProfile({ ...modifiedProfile, postal: e.target.value })} /> : profile.postal}</tr>
           <tr className="valeur">{modif ? <input type='text' value={modifiedProfile.ville} onChange={(e) => setModifiedProfile({ ...modifiedProfile, ville: e.target.value })} /> : profile.ville}</tr>
-          <tr className="entete">Nationalité :</tr>
+          <tr className="entete">Nationalité </tr>
           <tr className="valeur">{profile.nation}</tr>
-          <tr className="entete">N° de sécurité sociale :</tr>
+          <tr className="entete">N° de sécurité sociale </tr>
           <tr className="valeur">{profile.secu}</tr>
-          <tr className="entete">Contact CPAM :</tr>
+          <tr className="entete">Contact CPAM </tr>
           <tr className="valeur">{modif ? <input type='text' value={modifiedProfile.cpam} onChange={(e) => setModifiedProfile({ ...modifiedProfile, cpam: e.target.value })} /> : profile.cpam}</tr>
-          <tr className="entete">Contact Mutuelle :</tr>
+          <tr className="entete">Contact Mutuelle </tr>
           <tr className="valeur">{modif ? <input type='text' value={modifiedProfile.mutuelle} onChange={(e) => setModifiedProfile({ ...modifiedProfile, mutuelle: e.target.value })} /> : profile.mutuelle}</tr>
         </table>
         {modif ? <button className="modif_button" onClick={(e) => validprof(e)}>Valider mon profil</button> : <button className="modif_button" onClick={(e) => modifprof(e)}>Modifier mon profil</button>}
