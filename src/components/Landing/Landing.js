@@ -1,16 +1,17 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import './landing.css'
+import logo from '../../assets/images/hermes2.png'
 
 const Landing = () => {
 
         return (
             <div className='LandingPage'>
                 <div>
-                    <img className='Logo' src="" alt=' logo' /> 
+                    <img className='Logo' src={logo} alt=' logo' /> 
                 </div>
                 <div>
-                    <p className='slogan'> Lorem Ipsum</p>
+                    <p className='slogan'>Hermès</p>
                 </div>
                 
                 <div className='create' >
@@ -24,8 +25,8 @@ const Landing = () => {
                     </Link>
                 </div>
                 <div>
-                    <Link to="/" style={{ textDecoration: "none" }}>
-                            <p id='invite'> Parcourir sans créer de compte </p>
+                    <Link to="/informations" style={{ textDecoration: "none" }}>
+                            <p id='invite'> Comment fonctionne l'application ? </p>
                     </Link>
                 </div>
             </div>
