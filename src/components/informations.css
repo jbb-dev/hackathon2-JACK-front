@@ -1,0 +1,21 @@
+.informations_page {
+  display: flex;
+  flex-flow: column wrap;
+  margin-left: 3em;
+  margin-right: 3em;
+  padding-bottom: 1em;
+  text-align: justify;
+}
+
+.pass-button{
+  position: fixed;
+  right: 2em;
+  bottom: 2em;
+  background-color: #DE8300;
+  color: white;
+  text-align: center;
+  width: 5em;
+  height: 2.5em;
+  border: solid 1px#DE8300;
+  border-radius: 20px;
+}

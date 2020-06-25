@@ -31,8 +31,6 @@ const Register = () => {
   return (
     <div className="register_page">
       <img className="register_logo" src="" alt="logo" />
-
-      
         { 
           success === true ? 
             <div class="alert alert-success" role="alert">
@@ -81,7 +79,6 @@ const Register = () => {
               required
               value={dataUser.user_email}
               onChange={(e) => setDataUser({...dataUser, user_email: e.target.value})}
-
             />
           </label>
         </form>
