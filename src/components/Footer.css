@@ -1,0 +1,35 @@
+.footer {
+  width: 100%;
+}
+
+.save-button {
+  position: fixed;
+  left: 2em;
+  bottom: 4em;
+  background-color: #de8300;
+  color: white;
+  text-align: center;
+  width: 8em;
+  height: 2.5em;
+  border: solid 1px#DE8300;
+  border-radius: 20px;
+}
+
+.next-button {
+  position: fixed;
+  right: 2em;
+  bottom: 4em;
+  background-color: #de8300;
+  color: white;
+  text-align: center;
+  width: 8em;
+  height: 2.5em;
+  border: solid 1px#DE8300;
+  border-radius: 20px;
+}
+.step {
+  position: fixed;
+  right: 9.5em;
+  bottom: 2em;
+  font-weight: bold;
+}

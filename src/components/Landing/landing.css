@@ -52,11 +52,11 @@ button {
 }
 /* login page */
 
-body {
+/* body {
   display: flex;
   justify-content: center;
   text-align: center;
-}
+} */
 .login_page {
   margin-top: 12em;
   text-align: center;
@@ -102,6 +102,7 @@ body {
   margin-top: -0.2em;
   text-decoration: underline;
   padding: 0.7em;
+  margin-right: 3em;
 }
 .login_low_text {
   color: #DE8300;

@@ -7,7 +7,6 @@ function App() {
   return (
     <div>
       <Router />
-      <button onclick={generatePDF()}>Modify PDF</button>
     </div>
   );
 }
