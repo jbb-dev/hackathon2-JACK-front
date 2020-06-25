@@ -1,10 +1,10 @@
 /* LANDING PAGE */
-.LandingPage {
+.LandingPage, .login_page, .register_page {
   display: flex;
-  justify-content: flex-end;
   flex-flow: column nowrap;
   align-items: center;
   margin-top: 20em;
+  
   padding: 1em;
 }
 
@@ -16,6 +16,11 @@ p {
 
 .slogan {
   color: #77838f;
+}
+
+.Logo{
+  height: 55px;
+  width: auto;
 }
 
 .create,
@@ -52,11 +57,15 @@ button {
 }
 /* login page */
 
+<<<<<<< HEAD
 /* body {
   display: flex;
   justify-content: center;
   text-align: center;
 } */
+=======
+
+>>>>>>> d62e15f3e088229119958e2e3bdeda4a2e60d626
 .login_page {
   margin-top: 12em;
   text-align: center;
@@ -67,6 +76,7 @@ button {
   font-family: "Open-sans", sans-serif;
   font-size: 1em;
 }
+
 .login_logo {
   height: 9em;
   width: 9em;
@@ -111,15 +121,15 @@ button {
 /* register page */
 
 .register_page {
-  margin-top: 7em;
+  margin-top: 0;
   text-align: center;
 }
 .register_page p {
   text-align: center;
 }
 .register_logo {
-  height: 9em;
-  width: 9em;
+  height: 15em;
+  width: auto;
   padding: 0.5em;
 }
 
@@ -134,6 +144,10 @@ button {
   height: 3em;
   width: 18em;
   outline: none;
+}
+
+.disabled {
+  background-color: grey;
 }
 
 .register_forms {
@@ -155,4 +169,51 @@ button {
 .register_checkbox {
   font-size: 14px;
   padding: 1em;
+}
+
+/* home page */
+
+.home_button {
+  background-color: #00A0C8;
+  border: none;
+  border-style: none;
+  border-radius: 20px;
+  margin-bottom: 1em;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  height: 6em;
+  width: 18em;
+  outline: none;
+  margin-top: 1em;
+}
+
+.deconnexion_button {
+  background-color: #de8300;
+  border: none;
+  border-style: none;
+  border-radius: 20px;
+  margin-bottom: 1em;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  height: 2em;
+  width: 9em;
+  outline: none;
+  margin-top: 0;
+}
+
+.home_logo {
+  height: 13em;
+  width: auto;
+  padding: 0.5em;
+  margin-top: 1em;
+  margin-left: 8em;
+}
+
+.home {
+  text-align: center;
+}
+
+.deconnexion_button_div{
+  margin-top: 15px;
+  margin-left: 10px;
 }

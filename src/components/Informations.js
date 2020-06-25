@@ -28,7 +28,7 @@ const Informations = () => {
           ex eo cespite punico tecti manes eius heroici dolorum varietati
           medentur plerumque sospitales.
         </div>
-        <Link to="/register">
+        <Link to="/">
           <button type="button" className="pass-button">
             Passer
           </button>

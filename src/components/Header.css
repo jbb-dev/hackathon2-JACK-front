@@ -1,19 +1,22 @@
 .main-head {
     padding-bottom: 5.5em;
 }
-#header{
+.header{
+    position: fixed !important;
+    left: 0;
     background-color: #00A0C8;
-    height: 2.5em;
+    height: 5em;
     color : white;
     display: flex;
     width: 100%;
     justify-content: center;
-    text-align: center;
     align-items: center;   
     font-weight: 200;
-    position: fixed;
+    
 }
 
-h3 {
-    font-weight: 300 !important;
+#leftArrow {
+    position: fixed;
+    left: 7px;
+    top: 21;
 }
