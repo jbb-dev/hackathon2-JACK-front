@@ -11,6 +11,8 @@ import Demand3 from "./components/Demands/Demand-part3";
 import Profile from "./components/Profile"
 import Home from "./components/Home"
 import CreatePDF from './components/CreatePDF'
+import Documents from './components/Documents'
+
 
 
 const Router = () => {
@@ -28,7 +30,7 @@ const Router = () => {
         <Route exact path="/home" component={Home} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/generate-pdf" component={CreatePDF} />
-
+        <Route exact path="/documents" component={Documents} />
       </Switch>
     </>
   );
