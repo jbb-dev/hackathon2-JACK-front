@@ -1,6 +1,8 @@
 import { PDFDocument, StandardFonts } from 'pdf-lib'
 import download from 'downloadjs'
 import cerfa_page1 from '../cerfa_page1.pdf'
+import pdfUpload from './pdfUpload'
+
 
 async function generatePdf (profile) {
 
@@ -227,9 +229,16 @@ async function generatePdf (profile) {
   // Serialize the PDFDocument to bytes (a Uint8Array)
   const pdfBytes = await pdfDoc.save()
 
+
+  //Save PDF document in cloud"
+  pdfUpload(pdfBytes)
+
+
+
+
   // Trigger the browser to download the PDF document
   download(pdfBytes, "cerfa_auto_filled.pdf", "application/pdf");
-  return new Blob([pdfBytes], { type: 'application/pdf' })
+//   return new Blob([pdfBytes], { type: 'application/pdf' })
 
 }
 
