@@ -8,7 +8,7 @@ import Uploads from "../Upload";
 const DemandPart2 = () => {
   return (
     <>
-      <Header title="Créer une demande" />
+      <Header arrow="true" title="Créer une demande" pathName="/DemandStep1" />
       <div className="demand2_page">
         <div>
           <h4>Motif de recours aux soins:</h4>

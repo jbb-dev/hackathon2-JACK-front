@@ -6,7 +6,7 @@ import Footer from "../Footer";
 const DemandPart1 = () => {
   return (
     <>
-      <Header title="Créer une demande" />
+      <Header arrow="true" title="Créer une demande" pathName="/home" />
       <div className="demand1_page">
         <div className="demand1_file">
           <input type="text" name="File" placeholder="Nom du dossier" />

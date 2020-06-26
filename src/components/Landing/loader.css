@@ -1,0 +1,31 @@
+#loader {
+  width: 275px;
+  transform: translate(2%, -100%);
+  animation: filled 5s ease forwards 3.5s;
+}
+
+.Loader {
+  margin-top: 20em;
+  margin-bottom: -6em;
+}
+
+#loader path {
+  stroke-dasharray: 2720px;
+  stroke-dashoffset: 2720px;
+  animation: line-anim 5s ease forwards 0s;
+}
+
+
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes filled {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #DE8300;
+  }
+}

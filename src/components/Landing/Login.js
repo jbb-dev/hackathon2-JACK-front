@@ -3,6 +3,8 @@ import "./landing.css";
 import { Link } from "react-router-dom";
 import logo from '../../assets/images/hermes2.png'
 import Axios from 'axios'
+import LogoTexte from "./LogoTexte";
+
 
 const Login = () => {
   const [success, setSuccess] = useState(null)
@@ -32,7 +34,8 @@ const Login = () => {
 
   return (
     <div className="login_page">
-      <img className="login_logo" src={logo} alt="logo" />
+      <LogoTexte />
+      <img className="landing_logo" src={logo} alt="logo" />
       <div className="login_forms">
         <form>
           <label>
@@ -42,7 +45,9 @@ const Login = () => {
               placeholder=" Adresse mail"
               required
               value={login.login_email}
-              onChange={(e) => setLogin({...login, login_email: e.target.value})}
+              onChange={(e) =>
+                setLogin({ ...login, login_email: e.target.value })
+              }
             />
           </label>
         </form>
@@ -54,18 +59,25 @@ const Login = () => {
               placeholder=" Mot de passe"
               required
               value={login.login_password}
-              onChange={(e) => setLogin({...login, login_password: e.target.value})}
-
+              onChange={(e) =>
+                setLogin({ ...login, login_password: e.target.value })
+              }
             />
           </label>
         </form>
         <p>Mot de passe oublié</p>
       </div>
-      {login.login_password && login.login_email !== '' ? 
+      {login.login_password && login.login_email !== "" ? (
         <Link to="/home" style={{ textDecoration: "none" }}>
-          <button className="login_button" onClick={(e)=> getLog(e)}>Se connecter</button>
-        </Link> :
-      <button className="login_button disabled" disabled='true'>Se connecter</button>  }
+          <button className="login_button" onClick={(e) => getLog(e)}>
+            Se connecter
+          </button>
+        </Link>
+      ) : (
+        <button className="login_button disabled" disabled="true">
+          Se connecter
+        </button>
+      )}
       <div>
         <p>Pas encore de compte ?</p>
         <Link to="/register" style={{ textDecoration: "none" }}>
