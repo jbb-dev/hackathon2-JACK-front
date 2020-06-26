@@ -1,0 +1,43 @@
+.coverflow__figure__3bk_C{
+    box-shadow: none !important;
+    width: 100px !important;
+}
+
+.coverflow__stage__14oqC{
+    margin-top: -50px !important;
+}
+
+.coverflow__text__39hqd{
+    font-size: 8px !important;
+    height: 20px;
+    padding: 0 !important;
+    vertical-align: center !important;
+}
+
+.coverflow__container__1P-xE{
+    background: white !important;
+    margin-top: 40px !important;
+}
+
+.status{
+    text-align: center;
+}
+
+.demands{
+    display: flex;
+    flex-direction: row;
+    max-width: 80%;
+    margin-top: 85px;
+}
+.progress-bar{
+    background-color: #00A0C8 !important;
+}
+
+#doc{
+    height: 90px;
+    width: auto;
+}
+
+.docPara{
+    text-align: center;
+}

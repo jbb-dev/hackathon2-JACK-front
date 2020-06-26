@@ -6,6 +6,7 @@ import Register from "./components/Landing/Register";
 import Informations from "./components/Informations";
 import Profile from "./components/Profile"
 import Home from "./components/Home"
+import Demands from "./components/Demands"
 
 const Router = () => {
   return (
@@ -17,6 +18,7 @@ const Router = () => {
         <Route exact path="/informations" component={Informations} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/profile" component={Profile} />
+        <Route exact path="/demands" component={Demands} />
       </Switch>
     </>
   );

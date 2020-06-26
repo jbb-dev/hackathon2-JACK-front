@@ -20,7 +20,7 @@ const Home = () => {
           <button className="home_button">Créer une demande</button>
         </Link> 
 
-        <Link to="/home" style={{ textDecoration: "none" }}>
+        <Link to="/demands" style={{ textDecoration: "none" }}>
           <button className="home_button">Mes demandes</button>
         </Link> 
 
