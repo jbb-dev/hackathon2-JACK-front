@@ -188,3 +188,15 @@ background-color: #DE8300;
   border: solid 1px#DE8300;
   border-radius: 20px;
 }
+
+.upload_button {
+  margin-top: 2em;
+  margin-left: 4.5em;
+  background-color: white;
+  color: #de8300;
+  width: 10em;
+  height: 3em;
+  border: solid 1px#DE8300;
+  border-radius: 20px;
+  outline: none;
+}

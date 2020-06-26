@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Upload.css";
 
-function Uploads() {
+function Uploads(props) {
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -21,6 +21,7 @@ function Uploads() {
     const file = await res.json()
 
     setImage(file.secure_url)
+    props.setUrlDocument(image)
     setLoading(false)
   };
   return (
@@ -37,9 +38,7 @@ function Uploads() {
       ) : (
         <img src={image} alt={""} style={{ width: "200px" }} />
       )}
-      <div>
-        <button className="upload_button">Valider le document</button>
-      </div>
+      
     </div>
   );
 }
