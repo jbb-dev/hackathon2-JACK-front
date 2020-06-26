@@ -1,3 +1,5 @@
+/* demand 1*/
+
 .demand1_file{
   margin-left: 17%;
   margin-bottom: 1em;
@@ -71,6 +73,8 @@ justify-content: space-between;
   width: 9em;
 }
 
+/* demand 2*/
+
 .demand2_page{
   display: flex;
   flex-flow: wrap;
@@ -78,7 +82,7 @@ justify-content: space-between;
   margin-right: 2em;
   padding-bottom: 8em;
 }
-.demand2_page h4,.demand1_page h4 {
+.demand2_page h4,.demand1_page h4, .demand3_page h4 {
   font-size: 18px;
   text-align: left;
   margin-bottom: 1em;
@@ -148,4 +152,39 @@ input[type="radio"].demand2:checked + label {
   margin: 1em;
   border: #b0b9d390 solid 1px;
   border-radius: 5px;
+}
+
+/* demand 3*/
+
+.demand3_page{
+  display: flex;
+  flex-flow: wrap;
+  margin-left: 2em;
+  margin-right: 2em;
+  padding-bottom: 8em;
+}
+
+.pdf-preview{
+  height: 20em;
+  width: 15em;
+  margin: 0 2em 0 2em;
+}
+.list-group{
+  width: 19em;
+}
+
+.list-group span{
+background-color: #DE8300;
+}
+.send-button{
+  position: fixed;
+  left: 6.7em;
+  bottom: 5em;
+  background-color: #de8300;
+  color: white;
+  text-align: center;
+  width: 10em;
+  height: 2.5em;
+  border: solid 1px#DE8300;
+  border-radius: 20px;
 }
