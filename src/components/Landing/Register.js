@@ -11,18 +11,18 @@ const Register = () => {
   const [success, setSuccess] = useState(null)
   //post new user
   const [dataUser, setDataUser] = useState({
-    user_lastname : '',
-    user_firstname : '',
-    user_birthdate : '',
-    user_email : '',
-    user_password : '',
+    lastname : '',
+    firstname : '',
+    birthdate : '',
+    email : '',
+    password : '',
     user_accept_CGV : 0
   } )
 
   const subscribe = (e) => {
     e.preventDefault()
     Axios
-    .post('http://localhost:3010/api/users', dataUser)
+    .post('http://localhost:3001/users', dataUser)
     .catch(err => console.error(err))
     .finally(setSuccess(true))
   }
@@ -54,8 +54,8 @@ const Register = () => {
               type="text"
               placeholder=" Nom"
               autoFocus
-              value={dataUser.user_lastname}
-              onChange={(e) => setDataUser({...dataUser, user_lastname: e.target.value})}
+              value={dataUser.lastname}
+              onChange={(e) => setDataUser({...dataUser, lastname: e.target.value})}
             />
           </label>
         </form>
@@ -66,8 +66,8 @@ const Register = () => {
               className="register_input_text"
               type="text"
               placeholder=" Prénom"
-              value={dataUser.user_firstname}
-              onChange={(e) => setDataUser({...dataUser, user_firstname: e.target.value})}
+              value={dataUser.firstname}
+              onChange={(e) => setDataUser({...dataUser, firstname: e.target.value})}
             />
           </label>
         </form>
@@ -78,8 +78,8 @@ const Register = () => {
               className="register_input_text"
               type="text"
               placeholder=" Date de naissance"
-              value={dataUser.user_birthdate}
-              onChange={(e) => setDataUser({ ...dataUser, user_birthdate: e.target.value })}
+              value={dataUser.birthdate}
+              onChange={(e) => setDataUser({ ...dataUser, birthdate: e.target.value })}
             />
           </label>
         </form>
@@ -90,8 +90,8 @@ const Register = () => {
               type="email"
               placeholder=" Adresse mail"
               required
-              value={dataUser.user_email}
-              onChange={(e) => setDataUser({...dataUser, user_email: e.target.value})}
+              value={dataUser.email}
+              onChange={(e) => setDataUser({...dataUser, email: e.target.value})}
             />
           </label>
         </form>
@@ -102,8 +102,8 @@ const Register = () => {
               type="password"
               placeholder=" Mot de passe"
               required
-              value={dataUser.user_password}
-              onChange={(e) => setDataUser({...dataUser, user_password: e.target.value})}
+              value={dataUser.password}
+              onChange={(e) => setDataUser({...dataUser, password: e.target.value})}
 
             />
           </label>
@@ -126,7 +126,7 @@ const Register = () => {
         </Form>
       </div>
 
-      {dataUser.user_lastname && dataUser.user_firstname && dataUser.user_password &&  dataUser.user_email !== '' && dataUser.user_accept_CGV ? 
+      {dataUser.lastname && dataUser.firstname && dataUser.password &&  dataUser.email !== '' && dataUser.user_accept_CGV ? 
         <button 
           type='submit' 
           className='register_button' 
