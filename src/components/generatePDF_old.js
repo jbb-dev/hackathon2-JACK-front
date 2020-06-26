@@ -1,10 +1,164 @@
 import { PDFDocument, StandardFonts } from 'pdf-lib'
 import download from 'downloadjs'
 import cerfa_page1 from '../cerfa_page1.pdf'
-import pdfUpload from './pdfUpload'
 
 
-async function generatePdf (profile) {
+export const demand = {
+  victime:{
+    nom: 'Durand',
+    prenom: 'Paul',
+    naissance: '12/07/1984',
+    mail: 'eric.dupont@test.fr',
+    password: '123456',
+    rue: '2 lotissement de la Galinette, chemin du Puy',
+    postal: '13760',
+    ville: 'Saint-Cannat',
+    fr: true,
+    autre: false,
+    nation: '',
+    ressort: false,
+    secu: '184071399900166'
+  },
+}
+
+export const profile = {
+  
+  identite : 
+  {
+    nom_victime: demand.victime.nom,
+    prenom_victime: demand.victime.prenom,
+    num_immat : {
+      sex: demand.victime.secu.substr(0, 1),
+      birth_year: demand.victime.secu.substr(1, 2),
+      birth_month: demand.victime.secu.substr(3, 2),
+      birth_department: demand.victime.secu.substr(5, 2),
+      code_commune: demand.victime.secu.substr(7, 3),
+      birth_num_order: demand.victime.secu.substr(10, 3),
+      control_key: demand.victime.secu.substr(13, 2)
+      },
+    birthday_date: demand.victime.naissance,
+    adresse: ``
+  },
+  identite_assure :
+  {
+    nom_assure: '',
+      prenom_assure : '',
+      num_immat : {
+        sex : '',
+        birth_year : '',
+        birth_month : '',
+        birth_department : '',
+        code_commune : '',
+        birth_num_order : '',
+        control_key : ''
+      },
+      nationalite : {
+        fr: demand.victime.fr ? 'X' : '',
+        ressortissant: demand.victime.ressort ? 'X' : '',
+        autre : demand.victime.autre ? 'X' : '',
+        autre_precision : demand.victime.autre ? demand.victime.nation : ''
+      },
+      adresse : {
+        rue: demand.victime.rue,
+        code_postal: demand.victime.postal,
+        commune: demand.victime.ville,
+        email : demand.victime.mail
+      }
+  },
+  situation : {
+      salarie : 'X',
+      retraite : 'X',
+      etudiant : 'X',
+      chaumeur : 'X',
+      autre : 'X',
+      precision : "je n'ai aucune situation décrite"
+  },
+  caracteristique_sejour : {
+      adresse : '3 rue de la wild code school',
+      localite : 'hotel de Marseille',
+      pays : 'Mexique',
+      dates : {
+        du : '01/02/2020',
+        au : '10/02/2020'
+        },
+      motif : {
+        conges_payes : 'X',
+        tourisme : 'X',
+        detachement : 'X',
+        etudes : 'X'
+      }
+  },
+  motif_soins : "je me suis fait mal aux pieds en tombant de l'avion, les pompiers m'ont transportés aux urgences puis m'ont soignés",
+  nature_soins : {
+    rapport : {
+      maladie : 'X',
+      affection_longue_duree : 'X',
+      maternite : 'X',
+      accident_travail : 'X',
+      date : '02/02/2020',
+      accident_tiers : 'X',
+      date_accident_tiers : '04/02/2020',
+      soin_deja_prevu_oui : 'X',
+      soin_deja_prevu_non : 'X'
+      },
+    detail_soins : {
+      soin_ambulatoire : {
+        consultation_cabinet : 'X',
+        deplacement_medecin : 'X',
+        medecin_generaliste : 'X',
+        medecin_specialiste : 'X',
+        tarif_medecin : '49 €',
+        soin_dentaire : 'X',
+        soin_dentaire_precision : "on m'a arraché une dent",
+        soin_dentaire_tarif : '280 €',
+        protese_dentaire : 'X',
+        protese_dentaire_precision : "une belle dent en or",
+        protese_dentaire_tarif : '570 €',
+        chirurgie_ambulatoire : 'X',
+        chirurgie_ambulatoire_precision : "suppresion du pied au scalpel",
+        chirurgie_ambulatoire_tarif : '2500 €',
+        pharmacie : 'X',
+        pharmacie_tarif : '70 €',
+        examen_labo : 'X',
+        examen_labo_tarif : '50 €',
+        radiologie : 'X',
+        radiologie_precision : 'fissure au niveau du pied gauche',
+        radiologie_tarif : '200 €',
+        kine : 'X',
+        kine_tarif : '40 €',
+        infirmier : 'X',
+        infirmier_tarif : '90 €',
+        autres_soins : 'X',
+        autres_soins_precision : " j'en ai profité pour me faire lifter le visage",
+        autres_soins_tarif : '3500 €',
+        hospitalisation : 'X',
+        hospitalisation_date_du : '02/02/2020',
+        hospitalisation_date_au : '04/02/2020',
+        hospitalisation_precision : "soins chrirurgicaux",
+        hospitalisation_tarif : '830 €',
+        frais_transport : 'X',
+        frais_transport_precision : 'helicoptere et taxi',
+        frais_transport_tarif: '600 €'
+      },
+      soins_recus_ue : {
+        remboursement_pays_sejour : 'X',
+        remboursement_pays_france :'X',
+        remboursement_partiel_oui : 'X',
+        remboursement_partiel_non : 'X'
+    }
+  },
+  attestation_honneur : {
+    montant_total : '7490 €',
+    fait_a : 'Aix en Provence',
+    date : '20/06/2020',
+    signature : 'JBB',
+    impossibilite_signature : 'X'
+  }
+
+  }
+}
+
+async function generatePdf () {
 
   // Fetch Cerfa
   const existingPdfBytes = await fetch(cerfa_page1).then((res) => res.arrayBuffer())
@@ -226,21 +380,15 @@ async function generatePdf (profile) {
   drawText(profile.nature_soins.attestation_honneur.impossibilite_signature, 529, 89, 8)
 
 
+
   // Serialize the PDFDocument to bytes (a Uint8Array)
   const pdfBytes = await pdfDoc.save()
 
-
-  //Save PDF document in cloud"
-  pdfUpload(pdfBytes)
-
-
-
-
   // Trigger the browser to download the PDF document
   download(pdfBytes, "cerfa_auto_filled.pdf", "application/pdf");
-//   return new Blob([pdfBytes], { type: 'application/pdf' })
+  return new Blob([pdfBytes], { type: 'application/pdf' })
 
 }
 
 
-  export default generatePdf;
+  export default generatePdf_old;
