@@ -26,7 +26,7 @@ const Login = () => {
   const getLog = (e) => {
     e.preventDefault()
     Axios
-    .get('http://localhost:3010/api/users', login)
+    .get('http://localhost:3001/user', login)
     .catch(err => console.error(err))
     .finally(setSuccess(true))
   }
